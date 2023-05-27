@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  cursor: auto !important;
+}
+
+/* Style the animated cursor */
+.animated-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Make the cursor not interactable */
+  z-index: 9999; /* Ensure the cursor is on top of other elements */
+}
+
+a:hover {
+  cursor: pointer !important;
+}
+
+.cursor-highlight {
+  position: relative;
+}
+
+.cursor-highlight::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  width: 50%;
+  height: 2px;
+  mix-blend-mode: difference;
+}
